@@ -1,0 +1,16 @@
+fwrequest,ip=27.221.81.17,ipcname=temp.p23.tc.cdntip.com.,cname=tiny2.china.line.qiniudns.com,host=static.arthas.info,region=重庆:联通|北京:电信|上海:电信,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.31217208
+fwrequest,ip=101.126.63.153,ipcname=qiniu.xdwscache.ourglb0.com.,cname=tiny2.china.line.qiniudns.com,host=icon.cdn.yzzb.tv,region=福建:鹏博士|广东:鹏博士|江西:鹏博士,cdn=wangsu,code=2 path="qiniu_do_not_delete.gif",error="Get http://101.126.63.153/qiniu_do_not_delete.gif: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)",referer="",processtime=10.000092016
+fwrequest,ip=117.34.34.13,ipcname=temp.p23.tc.cdntip.com.,cname=tiny.china.line.qiniudns.com,host=st0.meiyaapp.com,region=陕西:电信,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.204724384
+fwrequest,ip=112.253.38.132,ipcname=qiniu.xdwscache.ourglb0.com.,cname=tiny2.china.line.qiniudns.com,host=music.polarbearsky.com,region=山东:联通,cdn=wangsu,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.109286488
+fwrequest,ip=60.28.160.33,ipcname=qiniu.xdwscache.ourglb0.com.,cname=tiny2.china.line.qiniudns.com,host=files.insdesign.cn,region=天津:联通,cdn=wangsu,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.080953198
+fwrequest,ip=221.204.28.30,ipcname=temp.p23.tc.cdntip.com.,cname=tiny2.china.line.qiniudns.com,host=img1.caiguavpn.com,region=山西:联通,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.18358199700000002
+fwrequest,ip=122.228.72.151,ipcname=temp.p23.tc.cdntip.com.,cname=tiny.china.qiniu.cloud.cdntip.com,host=qiniu.dezhi.com,region=浙江:电信|新疆:电信|吉林:电信|宁夏:电信,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.057540475
+fwrequest,ip=182.131.30.29,ipcname=temp.p23.tc.cdntip.com.,cname=tiny2.china.line.qiniudns.com,host=html.yootron.com,region=西藏:电信,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.21239604
+fwrequest,ip=122.228.72.147,ipcname=temp.p23.tc.cdntip.com.,cname=tiny2.china.line.qiniudns.com,host=cdn.gksec.com,region=宁夏:电信|青海:电信,cdn=tencent,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.061723892
+fwrequest,ip=60.215.125.71,ipcname=qiniunor.xdwscache.ourglb0.com.,cname=wsall.qiniudn.com.wscdns.com,host=doc.yxt.com,region=山东:联通,cdn=wangsu,code=206 path="qiniu_do_not_delete.gif",error="",referer="",processtime=0.267928712
+
+
+addr = "http://localhost:8086"
+db = "test"
+start_ts_inclusive = 1
+end_ts_inclusive = 10
