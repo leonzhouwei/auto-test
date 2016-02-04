@@ -8,8 +8,8 @@ import (
 
 // Config
 type Config struct {
-	DebugLevel      int       `toml:"debug_level" json:"debugLevel"`
-	
+	DebugLevel int `toml:"debug_level" json:"debugLevel"`
+
 	ExpectedArray []ConfigAPI `toml:"expected" json:"expected"`
 	ActualArray   []ConfigAPI `toml:"actual" json:"actual"`
 }

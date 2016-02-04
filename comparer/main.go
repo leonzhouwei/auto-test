@@ -1,17 +1,17 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
+	"os"
 
 	"qiniu.com/pandora-auto-test/comparer/biz"
-
-	"github.com/qiniu/log.v1"
 )
 
 const (
-	sepLine   = "----------------------------------------------------------------------"
+	start = "=== comparing start"
+	end = "=== comparing end"
 	errMsgFmt = "ERROR: GOT %v BUT EXPECTED WAS %v\n"
 )
 
@@ -28,17 +28,13 @@ func main() {
 		log.Fatal(err2)
 	}
 
-	fmt.Println(sepLine)
-	fmt.Println(config)
-	log.SetOutputLevel(config.DebugLevel)
+	fmt.Println("config: ", config)
 
 	// query
-	fmt.Println(sepLine)
 	compareAll(*config)
 
 	// ok
-	fmt.Println(sepLine)
-	fmt.Println("OK")
+	fmt.Println("ALL OK")
 }
 
 func compareAll(conf biz.Config) {
@@ -49,7 +45,10 @@ func compareAll(conf biz.Config) {
 }
 
 func compare(expectedAPI, actualAPI biz.ConfigAPI) {
-	fmt.Println("comparing", expectedAPI, "to", actualAPI, "...")
+	fmt.Println(start)
+	fmt.Println("expected API:", expectedAPI)
+	fmt.Println("  actual API:", actualAPI)
+	fmt.Println()
 
 	// query the expected
 	expectedBytes, err := biz.Query(expectedAPI)
@@ -57,7 +56,6 @@ func compare(expectedAPI, actualAPI biz.ConfigAPI) {
 		log.Fatal(err)
 	}
 	expected := string(expectedBytes)
-	log.Debug("expected:", expected)
 
 	// query the actual
 	actualBytes, err := biz.Query(actualAPI)
@@ -65,13 +63,12 @@ func compare(expectedAPI, actualAPI biz.ConfigAPI) {
 		log.Fatal(err)
 	}
 	actual := string(actualBytes)
-	log.Debug("actual:", actual)
 
 	// compare and stat
 	if expected != actual {
-		errMsg := fmt.Sprintf(errMsgFmt, actual, expected)
-		err := errors.New(errMsg)
-		log.Fatal(err)
+		fmt.Printf(errMsgFmt, actual, expected)
+		os.Exit(1)
 	}
 	fmt.Println("EQUAL")
+	fmt.Println(end)
 }
